@@ -15,13 +15,17 @@ sub sync_repo {
 
 	chdir $base_dir;
 	system q( test -d ).$repo_name.q( || git clone git@github.com:).$github_user.q(/).$repo_name.q(.git );
-	chdir $base_dir."/".$repo_name and do {
-		print "Pull all branched from github\n";
-		system q( bash -c "git clean -xdf; git fetch --all; for i in $(git branch | sed 's/^.//'); do git checkout $i; git pull; done" );
+	if (-d $base_dir."/".$repo_name) {
+		chdir $base_dir."/".$repo_name;
+		print "Pull all branches from github\n";
+		system q( bash -c "git clean -xdf; git fetch origin; for i in $(git branch | sed 's/^.//'); do git checkout $i; git pull; done" );
 		system q( git remote add bitbucket git@bitbucket.org:).$bitbucket_user.q(/).$repo_name.q(.git );
-		print "Push all branched to bitbucket\n";
-		system q( git push bitbucket --all );
-	};
+		print "Push all branches to bitbucket\n";
+		system q( bash -c "echo -n | unbuffer git push -v bitbucket --all" );
+	}
+	else {
+		print "Clone failed: $repo_name\n";
+	}
 
 	select undef, undef, undef, 1;
 }
