@@ -21,7 +21,7 @@ sub sync_repo {
 		system q( bash -c "git clean -xdf; git fetch origin; for i in $(git branch | sed 's/^.//'); do git checkout $i; git pull; done" );
 		system q( git remote add bitbucket git@bitbucket.org:).$bitbucket_user.q(/).$repo_name.q(.git );
 		print "Push all branches to bitbucket\n";
-		system q( bash -c "echo -n | unbuffer git push -v bitbucket --all" );
+		system q( bash -c "echo -n | stdbuf -i0 -o0 -e0 git push -v bitbucket --all" );
 	}
 	else {
 		print "Clone failed: $repo_name\n";
