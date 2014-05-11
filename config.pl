@@ -5,6 +5,15 @@ our @config = (
 	{
 		github_user => tobiasschulz,
 		bitbucket_user => tobiasschulz,
+		private => 1,
+		repos => [
+			"documents",		"private-repo",
+		],
+	},
+
+	{
+		github_user => tobiasschulz,
+		bitbucket_user => tobiasschulz,
 		private => 0,
 		repos => [
 			"github2bitbucket",	"scripts",			"uni-betriebssysteme",
