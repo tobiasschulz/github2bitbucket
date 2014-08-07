@@ -18,6 +18,7 @@ our @config = (
 		repos => [
 			"github2bitbucket",	"scripts",			"uni-betriebssysteme",
 			"uni-swt",		"rezepte",			"schule",
+			"navigation",		
 			"flickrsmartsync",	"tobiasschulz.github.io",	"limelight-pc-opengl",
 			"LaTeX-examples",	"SDL2-CS",			"openal-test",
 			"doxygen",		"call-qt",			"addic7ed-ruby",
