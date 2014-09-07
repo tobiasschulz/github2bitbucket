@@ -18,13 +18,13 @@ our @config = (
 		repos => [
 			"github2bitbucket",	"scripts",			"uni-betriebssysteme",
 			"uni-swt",		"rezepte",			"schule",
-			"navigation",		
+			"navigation",		"savegames",			
 			"flickrsmartsync",	"tobiasschulz.github.io",	"limelight-pc-opengl",
 			"LaTeX-examples",	"SDL2-CS",			"openal-test",
 			"doxygen",		"call-qt",			"addic7ed-ruby",
 			"voipcall",		"private",			"tailserver",
 			"craftbook",		"gimp-plugins",			"fdupes",
-			"android-vnc",
+			"android-vnc",		"pwnat",			"QtSharp",
 		],
 	},
 
