@@ -7,7 +7,8 @@ our @config = (
 		bitbucket_user => tobiasschulz,
 		private => 1,
 		repos => [
-			"documents",		"private-repo",
+			"documents",		"private-repo",			
+			"UnrealEngine",		"UnrealTournament",
 		],
 	},
 
